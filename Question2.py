@@ -16,33 +16,33 @@ pygame.display.set_caption("QUESTÃO 2")
 def init_ortho():
     glMatrixMode(GL_PROJECTION)
     glLoadIdentity()
-    gluOrtho2D(0, 640, 0, 480)
+    gluOrtho2D(0, 800, 0, 600)
 
 
 def plot_point():
     glBegin(GL_POINTS)
-    glVertex2f(0, 0)
+    for p in mouse_position:
+        glVertex2f(p[0], p[1])
     glEnd()
 
 
 done = False
 
 init_ortho()
-glPointSize(5)
+glPointSize(50)
+mouse_position = []
 
 while not done:
-    mouse_postion = None
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             done = True
-        elif event.type ==MOUSEBUTTONDOWN:
-             mouse_postion = pygame.mouse.get_pos()
+        elif event.type == MOUSEBUTTONDOWN:
+            mouse_position.append(pygame.mouse.get_pos())
 
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT)
     glMatrixMode(GL_MODELVIEW)
     glLoadIdentity()
-    if mouse_postion is not None:
-        plot_point(mouse_postion)
+    plot_point()
     pygame.display.flip()
     pygame.time.wait(100)
 
