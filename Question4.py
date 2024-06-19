@@ -150,9 +150,13 @@ def plot_square():
 done = False
 dot_size = 5
 
+# Cores disponiveis (branco, vermelho, verde, azul)
+
 colors = [(255, 255, 255), (255, 0, 0), (0, 255, 0), (0, 0, 255)]
 color_index = 0
-current_color = colors[1]
+current_color = colors[0]
+
+# booleanas para ativar os métodos de desenhos
 draw_triangle = False
 draw_circle = False
 draw_square = False
@@ -219,7 +223,7 @@ while not done:
                 draw_square = not draw_square
                 draw_circle = False
                 draw_triangle = False
-
+# Chamada das funções
     plot_triangle()
     plot_circle()
     plot_square()

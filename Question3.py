@@ -75,6 +75,7 @@ while not done:
             elif event.key == K_DOWN:
                 #  limita a 1 o tamanho do ponto
                 dot_size = max(1, dot_size - 5)
+# Chamada da função
     plot_point()
 
 pygame.quit()

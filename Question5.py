@@ -107,7 +107,7 @@ while not done:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             done = True
-
+# Chamada das funções
     plot_fox()
     plot_fox_details()
 

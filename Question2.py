@@ -48,7 +48,7 @@ while not done:
             pos_x, pos_y = event.pos
             pos_y = height - pos_y
             mouse_points.append((pos_x, pos_y))
-
+# Chamada da função
     plot_point()
 
 pygame.quit()
