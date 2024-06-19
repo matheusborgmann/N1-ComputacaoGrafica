@@ -5,8 +5,11 @@ from OpenGL.GLU import *
 import win32api
 import math
 
-#win32api.MessageBox(0, 'R: limpar a tela\nC: Mudar a cor\n↑: aumentar o tamanho dos pontos\n↓:diminuir o tamano dos pontos'\nQ: Desenhar um quadrado\nB: Desenhar uma bola:\nT: desenhar um triangulo, 'Comandos')
-print("\nQuestão 2\n", "Desenvolver uma aplicação gráfica interativa onde o usuário poderá desenhar pontos na tela ao clicar com o mouse. Esta atividade deverá ser realizada utilizando a integração entre Pygame e OpenGL, bem como os conceitos básicos de manipulação de eventos e renderização gráfica.")
+win32api.MessageBox(0, "R: limpar a tela\nC: Mudar a cor\n↑: aumentar o tamanho dos pontos\n↓:diminuir o tamano dos pontos\nQ: Desenhar um quadrado\nB: Desenhar uma bola:\nT: desenhar um triangulo", "Comandos")
+print("\nQuestão 4\n",
+      "Tendo como base as atividades anteriores você deverá: \n",
+      "A. Desenhar linhas conectando os pontos na ordem em que foram clicados.\n",
+      "B. Implementar diferentes formas geométricas (como triângulos ou quadrados) que podem ser desenhadas ao clicar com o mouse." )
 
 
 pygame.init()
@@ -18,7 +21,7 @@ height = 600
 screen = pygame.display.set_mode((width, height), DOUBLEBUF | OPENGL)
 pygame.display.set_caption("QUESTÃO 2")
 
-
+# Configura o viewport
 glViewport(0, 0, height, width)
 glMatrixMode(GL_PROJECTION)
 glLoadIdentity()
